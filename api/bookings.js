@@ -2,12 +2,12 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
       const { date, time, guests, name, contact } = req.body;
   
-      // Validate the request data
+      
       if (!date || !time || !guests || !name || !contact) {
         return res.status(400).json({ error: 'All fields are required' });
       }
   
-      // Check if the booking slot is already taken
+      
       const existingBooking = bookings.find(
         (booking) => booking.date === date && booking.time === time
       );
